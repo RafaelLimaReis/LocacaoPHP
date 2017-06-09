@@ -171,11 +171,11 @@ return [
         /*
          * Application Service Providers...
          */
-        Locacao\Providers\AppServiceProvider::class,
-        Locacao\Providers\AuthServiceProvider::class,
-        // Locacao\Providers\BroadcastServiceProvider::class,
-        Locacao\Providers\EventServiceProvider::class,
-        Locacao\Providers\RouteServiceProvider::class,
+        app\Providers\AppServiceProvider::class,
+        app\Providers\AuthServiceProvider::class,
+        // app\Providers\BroadcastServiceProvider::class,
+        app\Providers\EventServiceProvider::class,
+        app\Providers\RouteServiceProvider::class,
 
         /*
         * Package imported
