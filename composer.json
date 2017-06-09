@@ -7,7 +7,13 @@
     "require": {
         "php": ">=5.6.4",
         "laravel/framework": "5.4.*",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.3.0",
+        "lord/laroute": "^2.4",
+        "infyomlabs/adminlte-templates": "dev-master",
+        "laracasts/presenter": "^0.2.1",
+        "prettus/l5-repository": "^2.6",
+        "laracasts/flash": "^3.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
