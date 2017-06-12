@@ -1,45 +1,60 @@
 <?php
 
-namespace app\Providers;
+namespace App\Providers;
 
-use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * This namespace is applied to your controller routes.
-     *
-     * In addition, it is set as the URL generator's root namespace.
+     * The site controllers namespace
      *
      * @var string
      */
-    protected $namespace = 'app\Http\Controllers';
+    protected $siteNamespace = 'App\Http\Controllers\Site';
+
+    /**
+     * The admin controllers namespace
+     *
+     * @var string
+     */
+    protected $adminNamespace = 'App\Http\Controllers\Admin';
+
+    /**
+     * The app controllers namespace
+     *
+     * @var string
+     */
+    protected $appNamespace = 'App\Http\Controllers\App';
+
+    /**
+     * The api controllers namespace
+     *
+     * @var string
+     */
+    protected $apiNamespace = 'App\Http\Controllers\Api';
 
     /**
      * Define your route model bindings, pattern filters, etc.
      *
+     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
     public function boot()
     {
-        //
-
         parent::boot();
     }
 
     /**
      * Define the routes for the application.
      *
+     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function map()
+    public function map(Router $router)
     {
-        $this->mapApiRoutes();
-
-        $this->mapWebRoutes();
-
-        //
+        $this->mapWebRoutes($router);
     }
 
     /**
@@ -47,27 +62,50 @@ class RouteServiceProvider extends ServiceProvider
      *
      * These routes all receive session state, CSRF protection, etc.
      *
+     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    protected function mapWebRoutes()
+    protected function mapWebRoutes(Router $router)
     {
-        Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('app/Http/Routes/web.php'));
+        $router->group([
+            'namespace' => $this->adminNamespace,
+            'domain' => $this->devPrefix() . 'admin.',
+            'middleware' => 'web',
+            'as' => 'admin.',
+        ], function ($router) {
+            require app_path('Http/Routes/Admin.php');
+        });
+
+        $router->group([
+            'namespace' => $this->appNamespace,
+            'domain' => $this->devPrefix() . 'app.',
+            'middleware' => 'web',
+            'as' => 'app.',
+        ], function ($router) {
+            require app_path('Http/Routes/App.php');
+        });
+
+        $router->group([
+            'namespace' => $this->apiNamespace,
+            'domain' => $this->devPrefix() . 'api.',
+            'middleware' => 'api',
+            'as' => 'api.',
+        ], function ($router) {
+            require app_path('Http/Routes/Api.php');
+        });
+
+        $router->group([
+            'namespace' => $this->siteNamespace,
+            'domain' => $this->devPrefix(),
+            'middleware' => 'web',
+            'as' => 'site.',
+        ], function ($router) {
+            require app_path('Http/Routes/Site.php');
+        });
     }
 
-    /**
-     * Define the "api" routes for the application.
-     *
-     * These routes are typically stateless.
-     *
-     * @return void
-     */
-    protected function mapApiRoutes()
+    public function devPrefix()
     {
-        Route::prefix('api')
-             ->middleware('api')
-             ->namespace($this->namespace)
-             ->group(base_path('app/Http/Routes/api.php'));
+        return app()->environment('dev') ? 'dev.' : '';
     }
 }
