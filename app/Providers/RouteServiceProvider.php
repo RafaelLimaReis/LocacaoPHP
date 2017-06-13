@@ -8,13 +8,32 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * This namespace is applied to the controller routes in your routes file.
-     *
-     * In addition, it is set as the URL generator's root namespace.
+     * The site controllers namespace
      *
      * @var string
      */
-    protected $namespace = 'App\Http\Controllers';
+    protected $siteNamespace = 'App\Http\Controllers\Site';
+
+    /**
+     * The admin controllers namespace
+     *
+     * @var string
+     */
+    protected $adminNamespace = 'App\Http\Controllers\Admin';
+
+    /**
+     * The app controllers namespace
+     *
+     * @var string
+     */
+    protected $appNamespace = 'App\Http\Controllers\App';
+
+    /**
+     * The api controllers namespace
+     *
+     * @var string
+     */
+    protected $apiNamespace = 'App\Http\Controllers\Api';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -24,8 +43,6 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
-        //
-
         parent::boot($router);
     }
 
@@ -37,8 +54,58 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        $router->group(['namespace' => $this->namespace], function ($router) {
-            require app_path('Http/routes.php');
+        $this->mapWebRoutes($router);
+    }
+
+    /**
+     * Define the "web" routes for the application.
+     *
+     * These routes all receive session state, CSRF protection, etc.
+     *
+     * @param  \Illuminate\Routing\Router  $router
+     * @return void
+     */
+    protected function mapWebRoutes(Router $router)
+    {
+        $router->group([
+            'namespace' => $this->adminNamespace,
+            'domain' => $this->devPrefix() . 'admin.' . get_domain(),
+            'middleware' => 'web',
+            'as' => 'admin.',
+        ], function ($router) {
+            require app_path('Http/Routes/Admin.php');
         });
+
+        $router->group([
+            'namespace' => $this->appNamespace,
+            'domain' => $this->devPrefix() . 'app.' . get_domain(),
+            'middleware' => 'web',
+            'as' => 'app.',
+        ], function ($router) {
+            require app_path('Http/Routes/App.php');
+        });
+
+        $router->group([
+            'namespace' => $this->apiNamespace,
+            'domain' => $this->devPrefix() . 'api.' . get_domain(),
+            'middleware' => 'api',
+            'as' => 'api.',
+        ], function ($router) {
+            require app_path('Http/Routes/Api.php');
+        });
+
+        $router->group([
+            'namespace' => $this->siteNamespace,
+            'domain' => $this->devPrefix() . get_domain(),
+            'middleware' => 'web',
+            'as' => 'site.',
+        ], function ($router) {
+            require app_path('Http/Routes/Site.php');
+        });
+    }
+
+    public function devPrefix()
+    {
+        return app()->environment('dev') ? 'dev.' : '';
     }
 }
