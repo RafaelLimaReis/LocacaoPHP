@@ -6,6 +6,7 @@ const notify = require('gulp-notify');
 const csso = require('gulp-csso');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const copy = require('gulp-copy');
 
 const argv = require('yargs').argv;
 const LessPluginAutoPrefix = require('less-plugin-autoprefix');
@@ -53,4 +54,14 @@ gulp.task('libs', function(){
     .pipe(uglify())
     .pipe(gulp.dest(jsDest))
     .pipe(notify('Libs finalizado!'));
+});
+
+gulp.task('copy', function() {
+  gulp.src([
+    'node_modules/bootstrap/fonts/*',
+    'node_modules/font-awesome/fonts/*'
+  ])
+  .pipe(copy('public/assets/fonts', {
+    prefix: 3
+  }))
 });
