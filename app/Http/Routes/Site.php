@@ -1,4 +1,4 @@
 <?php
-Route::get('/testeSite', function(){
-    return 'testeSite';
+Route::get('/', function(){
+    return redirect(route('app.home'));
 });
