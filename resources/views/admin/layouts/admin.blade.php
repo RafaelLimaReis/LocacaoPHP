@@ -20,7 +20,7 @@
                   </a>
                 </nav>
             </header>
-            @include('app.layouts.sidebar')
+            @include('admin.layouts.sidebar')
             <div class="content-wrapper">
                  @yield('content')
             </div>
