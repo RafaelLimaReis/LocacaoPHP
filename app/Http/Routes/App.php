@@ -5,4 +5,6 @@ Route::post('login',['as' => 'postLogin', 'uses' => 'AuthController@postLogin'])
 
 Route::group(['middleware' => 'auth'], function(){
    Route::get('/home',['as' => 'home', 'uses' => 'HomeController@index']);
+
+   Route::resource('reserves', 'ReservesController', ['only' => ['index', 'show']]);
 });

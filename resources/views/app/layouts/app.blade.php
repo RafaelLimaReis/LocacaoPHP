@@ -11,7 +11,7 @@
     <body class="skin-green-light sidebar-mini " style="height: auto; min-height: 100%;">
         <div class="wrapper" style="height: auto; min-height: 100%;">
             <header class="main-header">
-                <a href="#" class="logo">
+                <a href="{{route('app.home')}}" class="logo">
                     Locação
                 </a>
                 <nav class="navbar navbar-static-top" role="navigation">

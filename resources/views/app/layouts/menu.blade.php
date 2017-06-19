@@ -1,5 +1,5 @@
 <li class="header">MENU</li>
-{!!Html::menuItem('Agendar Horario','#','usuarios*','fa fa-calendar')!!}
+{!!Html::menuItem('Agendar Horario',route('app.reserves.index'),'usuarios*','fa fa-calendar')!!}
 <li class="treeview">
     <a href="#">
             <i class="fa fa-wrench"></i>
