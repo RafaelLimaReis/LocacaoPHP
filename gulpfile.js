@@ -24,7 +24,9 @@ gulp.task('css', function(){
    let src = '';
 
    if(argv.app){
-        src = lessPatch + '/app/app.less'
+      src = lessPatch + '/app/app.less'
+   }else if(argv.admin){
+      src = lessPatch + '/admin/admin.less'
    }else{
         console.log('LESS não encontrado.');
         return;
