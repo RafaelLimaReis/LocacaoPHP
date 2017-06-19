@@ -2,6 +2,8 @@
   "private": true,
   "devDependencies": {
     "admin-lte": "^2.3.11",
+    "bootstrap-datepicker": "^1.7.0",
+    "flatpickr": "^3.0.5-1",
     "font-awesome": "^4.7.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.5.2",
@@ -13,6 +15,7 @@
     "gulp-uglify": "^1.5.4",
     "jquery": "^3.2.1",
     "less-plugin-autoprefix": "^1.5.1",
+    "moment": "^2.18.1",
     "yargs": "^8.0.2"
   },
   "dependencies": {
