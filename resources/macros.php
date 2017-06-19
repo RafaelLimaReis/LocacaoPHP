@@ -13,3 +13,50 @@ Html::macro('menuItem', function ($name, $url, $urlActive, $icon) {
     return $element;
 });
 
+Form::macro('textField', function ($name, $label = NULL, $value = NULL) {
+    $element = Form::text($name, $value ? $value : old($name));
+
+    return field_wrapper($name, $label, $element);
+});
+
+
+function field_wrapper($name, $label, $element) {
+    $out = '<div class="form-group';
+    $out .= field_error($name) . '">';
+    $out .= field_label($name, $label);
+    $out .= $element;
+    $out .= errors_msg($name);
+    $out .= '</div>';
+
+    return $out;
+}
+
+function field_error($field) {
+    $error = '';
+    if($errors = Session::get('errors')) {
+        $error = $errors->first($field) ? ' has-error' : '';
+    }
+    return $error;
+}
+
+function field_label($name, $label) {
+    if(is_null($label)) return '';
+
+    $name = str_replace('[]', '', $name);
+
+    $out = '<label for="' . $name . '" class="control-label">';
+    $out .= $label . '</label>';
+
+    return $out;
+}
+
+function errors_msg($field) {
+    $errors = Session::get('errors');
+
+    if($errors && $errors->has($field)) {
+        $msg = $errors->first($field);
+        return '<p class="help-block">' . $msg . '</p>';
+    }
+
+    return '';
+}
