@@ -8,7 +8,7 @@
         </span>
     </a>
     <ul class="treeview-menu" style="display: none;">
-        {!!Html::menuItem('Usuarios',route('admin.registerUser.index'),'usuarios*','fa fa-user-plus')!!}
+        {!!Html::menuItem('Usuarios',route('admin.registerUser.create'),'usuarios*','fa fa-user-plus')!!}
         {!!Html::menuItem('Areas','#','usuarios*','fa fa-plus')!!}
     </ul>
 </li>
