@@ -24,13 +24,36 @@ class UserRequest extends Request
     public function rules()
     {
         return [
-            'username' => 'unique:users,username'
+            'type'          => 'required',
+            'name'          => 'required',
+            'email'         => 'required|email',
+            'phone'         => 'required|min:11',
+            'username'      => 'required|unique:users,username',
+            'password'      => 'required|min:3|max:10'
         ];
     }
 
     public function messages(){
         return [
-            'username.unique' => 'Nome de Usuario já em uso.'
+            'username.unique' => 'Nome de Usuario já em uso.',
+            'username.required' => 'Por favor insira o Nome de Usuario',
+
+
+            'type.required' => 'Por favor insira o Tipo de usuario',
+
+            'name.required' => 'Por favor insira o Nome do usuario',
+
+            'email.required' => 'Por favor insira o Email',
+            'email.email' => 'Insira um email valido',
+
+            'phone.required' => 'Por favor insira o telefone',
+            'phone.min' => 'Insira no minimo :min numeros',
+
+
+            'password.required' => 'Por favor insira uma senha',
+            'password.min' => 'Insira no minimo :min caracteres',
+            'password.max' => 'Insira no maximo :max caracteres',
+
         ];
     }
 }

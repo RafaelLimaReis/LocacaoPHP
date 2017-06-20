@@ -9,8 +9,9 @@
         <div class="clearfix"></div>
         <div class="box box-success">
           <div class="box-body">
+            @include('flash::message')
             <div class="row" style="padding-left: 20px">
-            @include('admin.register.users.fields')
+              @include('admin.register.users.fields')
             </div>
           </div>
         </div>

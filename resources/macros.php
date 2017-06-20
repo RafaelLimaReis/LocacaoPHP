@@ -13,12 +13,17 @@ Html::macro('menuItem', function ($name, $url, $urlActive, $icon) {
     return $element;
 });
 
-Form::macro('textField', function ($name, $label = NULL, $value = NULL) {
-    $element = Form::text($name, $value ? $value : old($name));
+Form::macro('textField', function($name, $label = NULL, $value = NULL, $atributes = []){
+    $element = Form::text($name, $value ? $value : old($name), field_attributes($name, $atributes));
 
     return field_wrapper($name, $label, $element);
 });
 
+function field_attributes($name, $attributes = [], $noClass = false) {
+    $name = str_replace('[]', '', $name);
+
+    return array_merge(['class' => $noClass ? '' : 'form-control', 'id' => $name], $attributes);
+};
 
 function field_wrapper($name, $label, $element) {
     $out = '<div class="form-group';
@@ -29,7 +34,7 @@ function field_wrapper($name, $label, $element) {
     $out .= '</div>';
 
     return $out;
-}
+};
 
 function field_error($field) {
     $error = '';
@@ -37,7 +42,7 @@ function field_error($field) {
         $error = $errors->first($field) ? ' has-error' : '';
     }
     return $error;
-}
+};
 
 function field_label($name, $label) {
     if(is_null($label)) return '';
@@ -48,7 +53,7 @@ function field_label($name, $label) {
     $out .= $label . '</label>';
 
     return $out;
-}
+};
 
 function errors_msg($field) {
     $errors = Session::get('errors');
@@ -59,4 +64,4 @@ function errors_msg($field) {
     }
 
     return '';
-}
+};

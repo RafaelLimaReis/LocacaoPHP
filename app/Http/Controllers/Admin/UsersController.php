@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Flash;
 use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Services\UserService;
@@ -22,5 +23,7 @@ class UsersController extends Controller
 
     public function store(UserRequest $request){
         $return = $this->userService->create($request);
+        flash('Usuario cadastrado com sucesso.')->success()->important();
+        return back();
     }
 }
