@@ -1,4 +1,4 @@
-{{Form::open()}}
+{{Form::open(['route' => 'admin.registerUser.store'])}}
     <div class="row">
         <div class="form-group col-md-4">
             {{Form::label('type','Tipo:')}}
@@ -36,8 +36,9 @@
             )}}
         </div>
     </div>
+
     <div class="row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-6  has-feedback {{ $errors->has('username') ? ' has-error' : '' }}">
             {{Form::label('username','Nome de Usuario:')}}
             {{Form::text('username',null,
                 [
@@ -45,6 +46,11 @@
                 'placeholder' => 'Insira o nome de usuario'
                 ]
             )}}
+                @if ($errors->has('username'))
+                    <span class="help-block">
+                    <strong>{{ $errors->first('username') }}</strong>
+                </span>
+                @endif
         </div>
         <div class="form-group col-md-4">
             {{Form::label('phone','Telefone:')}}
@@ -61,7 +67,7 @@
             {{Form::label('password','Senha:')}}
             {{Form::password('password',
                 [
-                'class'=>'form-control'\
+                'class'=>'form-control'
                 ]
             )}}
         </div>
