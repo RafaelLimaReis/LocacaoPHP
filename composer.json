@@ -13,7 +13,8 @@
         "laracasts/flash": "^3.0",
         "laracasts/presenter": "^0.2.1",
         "infyomlabs/laravel-generator": "5.4.x-dev",
-        "infyomlabs/adminlte-templates": "5.4.x-dev"
+        "infyomlabs/adminlte-templates": "5.4.x-dev",
+        "nesbot/carbon": "^1.22"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
