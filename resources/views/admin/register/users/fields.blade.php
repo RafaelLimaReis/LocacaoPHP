@@ -74,6 +74,6 @@
     </div>
     <div class="box-footer">
         <button type="submit" class="btn btn-success">Salvar</button>
-        <a href="#" class="btn btn-default">Cancelar</a>
+        <a href="{{route('admin.home')}}" class="btn btn-default">Cancelar</a>
     </div>
 {{Form::close()}}
