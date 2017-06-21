@@ -7,6 +7,9 @@ use Illuminate\Support\ServiceProvider;
 use App\Repositories\UserRepositoryEloquent;
 use App\Repositories\Interfaces\UserRepository;
 
+use App\Repositories\AreaRepositoryEloquent;
+use App\Repositories\Interfaces\AreaRepository;
+
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -29,6 +32,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             UserRepository::class,
             UserRepositoryEloquent::class
+        );
+        $this->app->bind(
+            AreaRepository::class,
+            AreaRepositoryEloquent::class
         );
     }
 }

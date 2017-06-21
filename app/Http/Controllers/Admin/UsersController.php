@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use Flash;
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest;
 use App\Services\UserService;
+use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
 
 class UsersController extends Controller
