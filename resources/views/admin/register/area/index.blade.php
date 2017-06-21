@@ -9,6 +9,7 @@
         <div class="clearfix"></div>
         <div class="box box-success">
           <div class="box-body">
+            @include('flash::message')
             <div class="row" style="padding-left: 20px">
             @include('admin.register.area.fields')
             </div>
