@@ -8,8 +8,8 @@
         </span>
     </a>
     <ul class="treeview-menu" style="display: none;">
-        {!!Html::menuItem('Usuarios',route('admin.registerUser.create'),'usuarios*','fa fa-user-plus')!!}
-        {!!Html::menuItem('Areas',route('admin.registerArea.create'),'usuarios*','fa fa-plus')!!}
+        {!!Html::menuItem('Usuarios',route('admin.User.create'),'usuarios*','fa fa-user-plus')!!}
+        {!!Html::menuItem('Areas',route('admin.Area.create'),'usuarios*','fa fa-plus')!!}
     </ul>
 </li>
 <li class="treeview">

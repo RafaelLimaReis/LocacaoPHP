@@ -17,7 +17,6 @@ class AreaService {
 
     public function create($request){
         $area = $request->all();
-
         $area['created_at'] = $area['updated_at'] = Carbon::now();
 
         $this->areaRepository->create($area);

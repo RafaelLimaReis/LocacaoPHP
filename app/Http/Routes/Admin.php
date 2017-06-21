@@ -6,6 +6,6 @@ Route::post('login',['as' => 'postLogin', 'uses' => 'AuthController@postLogin'])
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/home',['as' => 'home', 'uses' => 'HomeController@index']);
 
-    Route::resource('registerUser', 'UsersController', ['only' => ['create','store']]);
-    Route::resource('registerArea', 'AreasController', ['only' => ['create','store']]);
+    Route::resource('User', 'UsersController', ['only' => ['create','store']]);
+    Route::resource('Area', 'AreasController', ['only' => ['create','store']]);
 });

@@ -1,4 +1,4 @@
-{{Form::open(['route' => 'admin.registerUser.store'])}}
+{{Form::open(['route' => 'admin.User.store'])}}
     <div class="row">
         <div class="form-group col-md-4 has-feedback {{ $errors->has('type') ? 'has-error' : ''}}">
             {{Form::label('type','Tipo:')}}
