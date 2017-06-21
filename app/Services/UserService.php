@@ -21,7 +21,7 @@ class UserService {
         $user['created_at'] = $user['updated_at'] = Carbon::now();
         $user['password'] = Hash::make($user['password']);
 
-       // $this->userRepository->create($user);
+        $this->userRepository->create($user);
         return $user;
     }
 }
