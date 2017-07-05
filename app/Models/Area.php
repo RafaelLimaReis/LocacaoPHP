@@ -20,4 +20,8 @@ class Area extends Model
 
     protected $fillable = ['name','description','number','id_responsible'];
 
+    public function responsible(){
+      return $this->belongsTo(User::class,'id_responsible','id');
+    }
+
 }
