@@ -25,4 +25,8 @@ class User extends Authenticatable
         'name', 'email' , 'username', 'phone', 'password', 'type'
     ];
 
+    public function area(){
+      return $this->hasMany(Area::class,'id_responsible','id');
+    }
+
 }

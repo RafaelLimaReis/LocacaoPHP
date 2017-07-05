@@ -18,6 +18,10 @@ class Area extends Model
 
     protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
-    protected $fillable = ['name','description','number'];
+    protected $fillable = ['name','description','number','id_responsible'];
+
+    public function responsible(){
+      return $this->belongsTo(User::class,'id_responsible','id');
+    }
 
 }

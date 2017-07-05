@@ -1,4 +1,4 @@
-{{Form::open(['route' => 'admin.registerArea.store'])}}
+{{Form::open(['route' => 'admin.Area.store'])}}
     <div class="row">
         <div class="form-group col-md-8 has-feedback {{$errors->has('name') ? 'has-error' : ''}}">
             {{Form::label('name', 'Nome:')}}
@@ -35,6 +35,21 @@
             @if ($errors->has('number'))
                 <span class="help-block">
                     <strong>{{ $errors->first('number') }}</strong>
+                </span>
+            @endif
+        </div>
+
+        <div class="form-group col-md-4 has-feedback {{$errors->has('responsible') ? 'has-error' : ''}}">
+            {{Form::label('responsible', 'Responsavel:')}}
+             {{Form::select('id_responsible',$responsibles,null,
+                [
+                'placeholder' => '-- Selecione o responsavel --',
+                'class' => 'form-control'
+                ]
+            )}}
+            @if ($errors->has('responsible'))
+                <span class="help-block">
+                    <strong>{{ $errors->first('responsible') }}</strong>
                 </span>
             @endif
         </div>
