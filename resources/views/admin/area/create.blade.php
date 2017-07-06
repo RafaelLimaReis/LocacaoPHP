@@ -11,7 +11,9 @@
           <div class="box-body">
             @include('flash::message')
             <div class="row" style="padding-left: 20px">
-            @include('admin.register.area.fields')
+              {{Form::open(['route' => 'admin.Area.store'])}}
+                @include('admin.area.fields')
+              {{Form::close()}}
             </div>
           </div>
         </div>
