@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html style="height: auto; min-height: 100%;">
     <head>
-        <title></title>
          <meta charset="UTF-8"/>
-        <title>Locação | @yield('title', 'App')</title>
+        <title>Locação | @yield('title', 'Admin')</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'/>
         <link rel="stylesheet" type="text/css" href="{!!asset('css/admin.css')!!}">
 
