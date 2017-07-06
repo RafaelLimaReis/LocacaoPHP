@@ -23,7 +23,7 @@ class AreasController extends Controller
         $responsibles = $this->userRepository->findWhere([
                             'type' => '1'
                         ])->pluck('name', 'id')->toArray();
-        return view('admin.register.area.index', compact('responsibles'));
+        return view('admin.area.create', compact('responsibles'));
     }
 
     public function store(AreaRequest $request){

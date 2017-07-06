@@ -2,17 +2,17 @@
 
 @section('content')
     <section class="content-header">
-        <h1 class="pull-left">Cadastro de Usuarios</h1>
+        <h1 class="pull-left">Usuarios</h1>
       </section>
       <div class="content">
         <div class="clearfix"></div>
         <div class="clearfix"></div>
         <div class="box box-success">
-          <div class="box-body">
+          <div class="box-head">
             @include('flash::message')
-            <div class="row" style="padding-left: 20px">
-              @include('admin.register.users.fields')
-            </div>
+          </div>
+          <div class="box-body">
+            @include('admin.users.table')
           </div>
         </div>
       </div>
