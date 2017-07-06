@@ -22,7 +22,7 @@
     </a>
     <ul class="treeview-menu" style="display: none;">
         {!!Html::menuItem('Usuarios',route('admin.User.index'),'usuarios*','fa fa-user')!!}
-        {!!Html::menuItem('Areas','#','usuarios*','fa fa-pencil-square-o')!!}
+        {!!Html::menuItem('Areas',route('admin.Area.index'),'usuarios*','fa fa-pencil-square-o')!!}
     </ul>
 </li>
 {!!Html::menuItem('Agendamentos','#','usuarios*','fa fa-calendar')!!}
