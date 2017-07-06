@@ -47,7 +47,7 @@ gulp.task('css', function(){
 gulp.task('libs', function(){
   gulp.src([
       'node_modules/jquery/dist/jquery.js',
-      'node_modules/admin-lte/dist/js/app.js',
+      'resources/assets/js/nifty.min.js',
       'node_modules/bootstrap/dist/js/bootstrap.js',
     ])
     .pipe(concat('libs.js'))
