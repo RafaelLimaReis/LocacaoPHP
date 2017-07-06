@@ -7,18 +7,25 @@ use Illuminate\Http\Request;
 use App\Services\UserService;
 use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
+use App\Repositories\Interfaces\UserRepository;
 
 class UsersController extends Controller
 {
     private $userService;
+    private $userRepository;
 
-    public function __construct(UserService $userService){
+    public function __construct(UserService $userService, UserRepository $userRepository){
         $this->userService = $userService;
+        $this->userRepository = $userRepository;
     }
 
+    public function index(){
+      $users = $this->userRepository->all();
+      return view('admin.users.index',compact('users'));
+    }
 
     public function create(){
-        return view('admin.register.users.index');
+      return view('admin.users.create');
     }
 
     public function store(UserRequest $request){
