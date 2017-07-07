@@ -1,49 +1,70 @@
 <!DOCTYPE html>
-<html style="height: auto; min-height: 100%;">
+<html>
     <head>
          <meta charset="UTF-8"/>
         <title>Locação | @yield('title', 'Admin')</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'/>
-        <link rel="stylesheet" type="text/css" href="{!!asset('css/admin.css')!!}">
-
+        <link rel="stylesheet" type="text/css" href="{!!asset('css/admin.min.css')!!}">
     </head>
-    <body class="skin-green-light sidebar-mini " style="height: auto; min-height: 100%;">
-        <div class="wrapper" style="height: auto; min-height: 100%;">
-            <header class="main-header">
-                <a href="{{route('admin.home')}}" class="logo">
-                    Locação
-                </a>
-                <nav class="navbar navbar-static-top" role="navigation">
-                  <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-                    <span class="sr-only">Toggle navigation</span>
-                  </a>
-                  <div class="navbar-custom-menu">
-                      <ul class="nav navbar-nav">
-                        <li class="dropdown user user-menu">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" arial-expanded="false">
-                            <span>{{Auth::user()->name}}</span>
-                            </a>
-                            <ul class="dropdown-menu">
-                            <li class="user-footer">
-                                <div class="pull-left">
-                                    <a href="#" class="btn btn-success btn-flat">Perfil</a>
-                                </div>
-                                <div class="pull-right">
-                                    {!!link_to_route('admin.logout','Sair',null,['class' => 'btn btn-default btn-flat'])!!}
-                                </div>
-                            </li>
-                            </ul>
-                        </li>
-                      </ul>
+    <body id="nifty-ready">
+        <div id="container" class="effect mainnav-lg">
+          <nav id="navbar">
+            <div id="navbar-container" class="boxed">
+              <div class="navbar-header">
+                <!-- title -->
+                <a href="#" class="navbar-brand">
+                  <div class="brand-title">
+                    <span class="brand-text mar-lft">
+                      Admin Locação
+                    </span>
                   </div>
-                </nav>
-            </header>
-            @include('admin.layouts.sidebar')
-            <div class="content-wrapper">
-                 @yield('content')
+                </a>
+              </div>
+              <div class="navbar-content clearfix">
+                <ul class="nav navbar-top-links pull-left">
+                  <!-- Toggle navigator -->
+                  <li class="tlg-menu-btn">
+                    <a href="#" class="mainnav-toggle">
+                      <i class="fa fa-navicon fa-lg"></i>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="nav navbar-top-links pull-right">
+                  <li class="dropdown-user" class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                      <span>{{Auth::user()->name}}</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-md dropdown-menu-right">
+                      <div class="pull-left" style="margin: 10px;">
+                        <a href="#" class="btn btn-default btn-flat">
+                          Perfil
+                        </a>
+                      </div>
+                      <div class="pull-right mar-all" style="margin: 10px;">
+                        <a href="{!! url('/logout') !!}" class="btn btn-default btn-flat">
+                          Sair
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
+          </nav>
+          <!-- Left side column. contains the logo and sidebar -->
+          @include('admin.layouts.sidebar')
+          <!-- Content. Contains page content -->
+          <div id="content-container">
+            @yield('content')
+          </div>
+          <!-- Main Footer -->
+          <footer id="footer" style="text-align: center;">
+            <strong>
+              Copyright © 2017 <a href="#">Locação</a>.
+            </strong>
+            All rights reserved.
+          </footer>
         </div>
-        <script type="text/javascript" src="{{asset('js/libs.min.js')}}"></script>
     </body>
-
+    <script type="text/javascript" src="{{asset('js/libs.js')}}"></script>
 </html>
