@@ -152,6 +152,7 @@ return [
         Laracasts\Flash\FlashServiceProvider::class,
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
         \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
+        Lord\Laroute\LarouteServiceProvider::class,
         /*
          * Application Service Providers...
          */
