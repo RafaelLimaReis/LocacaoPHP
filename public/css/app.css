@@ -9483,12 +9483,12 @@ h6,
   left: 0;
   position: relative;
   float: none;
-  background-color: #8dba60;
+  background-color: #3B3F4A;
 }
 .navbar-content {
   position: relative;
   left: 0;
-  background-color: #fff;
+  background-color: #8dba60;
   padding: 0 8px;
   box-shadow: inset -4px 0 0 0 #8dba60;
 }
@@ -9535,7 +9535,7 @@ h6,
 .navbar-top-links > li > a:hover:not(.mainnav-toggle) > i,
 .navbar-top-links > li > a:focus:not(.mainnav-toggle) > i,
 .navbar-top-links > li > a:hover:not(.mainnav-toggle) > i {
-  color: #242424;
+  color: #d9d9d9;
   transition: color 0.4s;
 }
 .navbar-top-links > li {
@@ -9546,19 +9546,19 @@ h6,
   padding: 0 12px;
   vertical-align: middle;
   height: 40px;
-  color: #4a4a4a;
+  color: #fff;
   transition: all 0.4s;
 }
 .navbar-top-links > li > a:not(.mainnav-toggle) > i {
-  color: #646464;
+  color: #ffffff;
   transition: color 0.4s;
 }
 .navbar-top-links > li > a:focus {
   background-color: transparent;
 }
 .navbar-top-links > li > a:hover {
-  background-color: #f2f2f2;
-  color: #0a0a0a;
+  background-color: #80b24e;
+  color: #bfbfbf;
   transition: all 0.4s;
 }
 .navbar-top-links > li > a > i {
@@ -9574,8 +9574,8 @@ h6,
 }
 .navbar-top-links > .open > a,
 .navbar-top-links > .open > a:focus {
-  background-color: #f2f2f2;
-  color: #4a4a4a;
+  background-color: #80b24e;
+  color: #fff;
 }
 .navbar-top-links .dropdown-menu .panel-body {
   padding: 0;
@@ -9667,7 +9667,7 @@ h6,
     display: block;
     width: 100%;
     height: 40px;
-    background-color: #8dba60;
+    background-color: #3B3F4A;
   }
   #container.mainnav-out .navbar-header:before {
     width: 0;
@@ -9676,7 +9676,7 @@ h6,
     width: 100%;
   }
   #navbar-container {
-    background-color: #fff;
+    background-color: #8dba60;
   }
   .navbar-content {
     margin-left: 220px;
@@ -9715,11 +9715,11 @@ h6,
   }
   .navbar-top-links .tgl-menu-btn > a,
   .navbar-top-links .tgl-menu-btn > a:hover {
-    color: #4a4a4a;
+    color: #fff;
   }
   .navbar-top-links .tgl-menu-btn > a:focus {
     background-color: transparent;
-    color: #4a4a4a;
+    color: #fff;
   }
 }
 /* NAVBAR : FIXED */
@@ -10287,7 +10287,7 @@ h6,
   }
   #container.mainnav-out .brand-title {
     background-color: transparent;
-    color: #4a4a4a;
+    color: #fff;
   }
 }
 /* Reveal*/
@@ -15436,10 +15436,10 @@ a:focus {
   box-shadow: 0 2px 0px -1px rgba(0, 0, 0, 0.05);
 }
 .navbar-header {
-  background-color: #8dba60;
+  background-color: #3B3F4A;
 }
 .navbar-content {
-  background-color: #fff;
+  background-color: #8dba60;
   box-shadow: inset -4px 0 0 0 #8dba60;
 }
 /* BRAND LOGO & TEXT
@@ -15461,25 +15461,25 @@ a:focus {
 .navbar-top-links > li > a:hover:not(.mainnav-toggle) > i,
 .navbar-top-links > li > a:focus:not(.mainnav-toggle) > i,
 .navbar-top-links > li > a:hover:not(.mainnav-toggle) > i {
-  color: #242424;
+  color: #d9d9d9;
 }
 .navbar-top-links > li > a {
-  color: #4a4a4a;
+  color: #fff;
 }
 .navbar-top-links > li > a:not(.mainnav-toggle) > i {
-  color: #646464;
+  color: #ffffff;
 }
 .navbar-top-links > li > a:focus {
   background-color: transparent;
 }
 .navbar-top-links > li > a:hover {
-  background-color: #f2f2f2;
-  color: #0a0a0a;
+  background-color: #80b24e;
+  color: #bfbfbf;
 }
 .navbar-top-links > .open > a,
 .navbar-top-links > .open > a:focus {
-  background-color: #f2f2f2;
-  color: #4a4a4a;
+  background-color: #80b24e;
+  color: #fff;
 }
 .navbar-top-links .tgl-menu-btn > a,
 .navbar-top-links .tgl-menu-btn > a:hover,
@@ -15496,10 +15496,10 @@ a:focus {
     background-color: transparent;
   }
   .navbar-header:before {
-    background-color: #8dba60;
+    background-color: #3B3F4A;
   }
   #navbar-container {
-    background-color: #fff;
+    background-color: #8dba60;
   }
   #container.mainnav-in .brand-title,
   #container.mainnav-sm .brand-title,
@@ -15511,11 +15511,11 @@ a:focus {
   }
   .navbar-top-links .tgl-menu-btn > a,
   .navbar-top-links .tgl-menu-btn > a:hover {
-    color: #4a4a4a;
+    color: #fff;
   }
   .navbar-top-links .tgl-menu-btn > a:focus {
     background-color: transparent;
-    color: #4a4a4a;
+    color: #fff;
   }
 }
 /* NAVIGATION */
@@ -15658,7 +15658,7 @@ a:focus {
   }
   #container.mainnav-out .brand-title {
     background-color: transparent;
-    color: #4a4a4a;
+    color: #fff;
   }
 }
 /* ASIDE */
