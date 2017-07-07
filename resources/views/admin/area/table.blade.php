@@ -17,7 +17,7 @@
           <a href="{{ route('admin.Area.show',[$area->id]) }}" class="btn btn-info btn-xs btn-icon">
             <i class="fa fa-eye"></i>
           </a>
-          <a href="" class="btn btn-default btn-xs btn-icon">
+          <a href="{{ route('admin.Area.edit',[$area->id]) }}" class="btn btn-default btn-xs btn-icon">
             <i class="fa fa-pencil-square-o"></i>
           </a>
           <a href="" class="btn btn-danger btn-xs btn-icon">

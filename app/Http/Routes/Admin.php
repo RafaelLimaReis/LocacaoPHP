@@ -7,5 +7,5 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/home',['as' => 'home', 'uses' => 'HomeController@index']);
 
     Route::resource('User', 'UsersController', ['only' => ['create','store','index','show']]);
-    Route::resource('Area', 'AreasController', ['only' => ['create','store','index','show']]);
+    Route::resource('Area', 'AreasController');
 });
