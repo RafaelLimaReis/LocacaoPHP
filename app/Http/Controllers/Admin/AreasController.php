@@ -65,4 +65,11 @@ class AreasController extends Controller
         flash('Area cadastrada com sucesso.')->success()->important();
         return back();
     }
+
+    public function destroy($id)
+    {
+        $this->areaRepository->delete($id);
+        flash('Area deletada com sucesso.')->important();
+        return back();
+    }
 }
