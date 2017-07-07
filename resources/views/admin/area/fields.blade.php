@@ -54,6 +54,6 @@
     </div>
 </div>
 <div class="box-footer">
-    <button type="submit" class="btn btn-success">Salvar</button>
-    <a href="{{route('admin.home')}}" class="btn btn-default">Cancelar</a>
+    <button type="submit" class="btn btn-success btn-labeled fa fa-floppy-o">Salvar</button>
+    <a href="{{route('admin.Area.index')}}" class="btn btn-default btn-labeled fa fa-undo">Cancelar</a>
 </div>

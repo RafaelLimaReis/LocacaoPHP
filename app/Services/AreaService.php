@@ -22,4 +22,11 @@ class AreaService {
         $this->areaRepository->create($area);
         return $area;
     }
+
+    public function update($request, $id){
+        $area = $request->except('_method','_token');
+        $area['updated_at'] = Carbon::now();
+
+        $this->areaRepository->update($area,$id);
+    }
 }

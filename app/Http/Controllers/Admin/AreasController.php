@@ -39,6 +39,22 @@ class AreasController extends Controller
         return view('admin.area.create', compact('responsibles'));
     }
 
+    public function edit($id){
+        $area = $this->areaRepository->find($id);
+
+        $responsibles = $this->userRepository->findWhere([
+                              'type' => '1'
+                        ])->pluck('name', 'id')->toArray();
+
+        return view('admin.area.edit', compact('area','responsibles'));
+    }
+
+    public function update(AreaRequest $request, $id){
+        $this->areaService->update($request, $id);
+        flash('Area atualizada com sucesso.')->success()->important();
+        return back();
+    }
+
     public function store(AreaRequest $request){
         $this->areaService->create($request);
         flash('Area cadastrada com sucesso.')->success()->important();
