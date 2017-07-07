@@ -24,6 +24,12 @@ class UsersController extends Controller
       return view('admin.users.index',compact('users'));
     }
 
+    public function show($id){
+      $user = $this->userRepository->find($id);
+
+      return view('admin.users.show',compact('user'));
+    }
+
     public function create(){
       return view('admin.users.create');
     }
