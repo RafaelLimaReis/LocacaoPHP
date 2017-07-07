@@ -4,8 +4,7 @@
          <meta charset="UTF-8"/>
         <title>Locação | @yield('title', 'App')</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'/>
-        <link rel="stylesheet" type="text/css" href="{!!asset('css/admin.min.css')!!}">
-
+        <link rel="stylesheet" type="text/css" href="{!!asset('css/app.min.css')!!}">
     </head>
     <body id="nifty-ready">
         <div id="container" class="effect mainnav-lg">
@@ -67,5 +66,6 @@
           </footer>
         </div>
     </body>
-    <script type="text/javascript" src="{{asset('js/libs.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/libs.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/app.min.js')}}"></script>
 </html>

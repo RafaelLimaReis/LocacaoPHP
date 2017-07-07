@@ -1,0 +1,32 @@
+---
+env:
+  browser: true
+  node: true
+  es6: true
+parser: babel-eslint
+parserOptions:
+  sourceType: module
+ecmaFeatures:
+  modules: true
+  classes: true
+rules:
+  curly: warn
+  strict: warn
+  no-undef: error
+  # valid-jsdoc: warn
+  no-trailing-spaces: warn
+  prefer-const: warn
+  no-var: warn
+  indent:
+    - warn
+    - 2
+    - SwitchCase: 1
+  quotes:
+    - warn
+    - single
+globals:
+  $: true
+  jQuery: true
+  JSONTree: true
+
+# vim:ft=yaml

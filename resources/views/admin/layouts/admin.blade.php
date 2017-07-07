@@ -4,7 +4,7 @@
          <meta charset="UTF-8"/>
         <title>Locação | @yield('title', 'Admin')</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'/>
-        <link rel="stylesheet" type="text/css" href="{!!asset('css/admin.min.css')!!}">
+        <link rel="stylesheet" type="text/css" href="{!!asset('css/admin.css')!!}">
     </head>
     <body id="nifty-ready">
         <div id="container" class="effect mainnav-lg">
