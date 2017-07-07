@@ -15,47 +15,52 @@ class AreasController extends Controller
     private $userRepository;
     private $areaRepository;
 
-    public function __construct(AreaService $areaService, UserRepository $userRepository, AreaRepository $areaRepository){
+    public function __construct(AreaService $areaService, UserRepository $userRepository, AreaRepository $areaRepository)
+    {
         $this->areaService = $areaService;
         $this->userRepository = $userRepository;
         $this->areaRepository= $areaRepository;
     }
 
-    public function index(){
-      $areas = $this->areaRepository->all();
-      return view('admin.area.index', compact('areas'));
+    public function index()
+    {
+        $areas = $this->areaRepository->all();
+        return view('admin.area.index', compact('areas'));
     }
 
-    public function show($id){
+    public function show($id)
+    {
         $area = $this->areaRepository->find($id);
-
-        return view('admin.area.show',compact('area'));
+        return view('admin.area.show', compact('area'));
     }
 
-    public function create(){
+    public function create()
+    {
         $responsibles = $this->userRepository->findWhere([
                               'type' => '1'
                         ])->pluck('name', 'id')->toArray();
         return view('admin.area.create', compact('responsibles'));
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $area = $this->areaRepository->find($id);
 
         $responsibles = $this->userRepository->findWhere([
                               'type' => '1'
                         ])->pluck('name', 'id')->toArray();
-
-        return view('admin.area.edit', compact('area','responsibles'));
+        return view('admin.area.edit', compact('area', 'responsibles'));
     }
 
-    public function update(AreaRequest $request, $id){
+    public function update(AreaRequest $request, $id)
+    {
         $this->areaService->update($request, $id);
         flash('Area atualizada com sucesso.')->success()->important();
         return back();
     }
 
-    public function store(AreaRequest $request){
+    public function store(AreaRequest $request)
+    {
         $this->areaService->create($request);
         flash('Area cadastrada com sucesso.')->success()->important();
         return back();
