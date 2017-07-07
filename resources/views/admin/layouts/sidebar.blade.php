@@ -1,7 +1,13 @@
-<aside class="main-sidebar" id="sidebar-wrapper">
-  <section class="sidebar">
-    <ul class="sidebar-menu">
-        @include('admin.layouts.menu')
-    </ul>
-  </section>
-</aside>
+<nav id="mainnav-container">
+  <div id="mainnav">
+    <div id="mainnav-menu-wrap">
+      <div class="nano has-scrollbar">
+        <div class="nano-content">
+          <ul id="mainnav-menu" class="list-group">
+            @include('admin.layouts.menu')
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

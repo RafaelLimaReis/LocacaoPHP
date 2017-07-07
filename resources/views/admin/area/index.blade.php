@@ -1,17 +1,15 @@
 @extends('admin.layouts.admin')
 
 @section('content')
-    <section class="content-header">
-        <h1 class="pull-left">Areas de Lazer</h1>
+    <section id="page-title">
+        <h1 class="page-header text-overflow">Areas de Lazer</h1>
       </section>
-      <div class="content">
-        <div class="clearfix"></div>
-        <div class="clearfix"></div>
-        <div class="box box-success">
-          <div class="box-head">
+      <div id="page-content">
+        <div class="panel panel-success">
+          <div class="panel-head">
             @include('flash::message')
           </div>
-          <div class="box-body">
+          <div class="panel-body">
             @include('admin.area.table')
           </div>
           </div>

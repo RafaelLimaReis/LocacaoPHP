@@ -5,8 +5,8 @@ use Illuminate\Support\Collection;
 Html::macro('menuItem', function ($name, $url, $urlActive, $icon) {
     $element = '<li class="treeview ' . active($urlActive) . '">';
     $element .= '<a href="' . $url . '">';
-    $element .= '<i class="' . $icon . '"></i>';
-    $element .= '<span>' . $name . '</span>';
+    $element .= '<i class="' . $icon . ' pull-left"></i>';
+    $element .= '<span class="menu-title">' . $name . '</span>';
     $element .= '</a>';
     $element .= '</li>';
 
