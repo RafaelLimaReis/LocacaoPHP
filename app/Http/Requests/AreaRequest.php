@@ -23,13 +23,14 @@ class AreaRequest extends Request
      */
     public function rules()
     {
+        $id = request()->segment(2) ?: 0;
         return [
             'name'          => 'required',
-            'number'        => 'required|unique:areas,number'
+            'number'        => 'required|unique:areas,number,'.$id.',id'
         ];
     }
 
-public function messages(){
+    public function messages(){
         return [
             'name.required'     => 'Nome da area obrigatorio',
             'number.required'   => 'Numero obrigatorio',
