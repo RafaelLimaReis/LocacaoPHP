@@ -8,4 +8,5 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::resource('User', 'UsersController', ['only' => ['create','store','index','show']]);
     Route::resource('Area', 'AreasController');
+
 });
