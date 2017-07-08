@@ -23,12 +23,13 @@ class UserRequest extends Request
      */
     public function rules()
     {
+      $id = request()->segment(2) ?: 0;
         return [
             'type'          => 'required',
             'name'          => 'required',
             'email'         => 'required|email',
             'phone'         => 'required|min:11',
-            'username'      => 'required|unique:users,username',
+            'username'      => 'required|unique:users,username,'.$id.',id',
             'password'      => 'required|min:3|max:10'
         ];
     }

@@ -24,4 +24,12 @@ class UserService {
         $this->userRepository->create($user);
         return $user;
     }
+
+    public function update($request, $id){
+      $user = $request->except('_method','_token');
+      $user['updated_at'] = Carbon::now();
+
+      $this->userRepository->update($user, $id);
+
+    }
 }
