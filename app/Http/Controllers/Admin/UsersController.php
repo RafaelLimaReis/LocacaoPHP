@@ -50,4 +50,10 @@ class UsersController extends Controller
         flash('Usuario cadastrado com sucesso.')->success()->important();
         return back();
     }
+
+    public function destroy($id){
+      $this->userRepository->delete($id);
+      flash('Usuario excluido com sucesso.')->important();
+      return back();
+    }
 }
