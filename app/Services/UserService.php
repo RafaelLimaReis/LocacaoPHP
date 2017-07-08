@@ -28,6 +28,7 @@ class UserService {
     public function update($request, $id){
       $user = $request->except('_method','_token');
       $user['updated_at'] = Carbon::now();
+      $user['password'] = Hash::make($user['password']);
 
       $this->userRepository->update($user, $id);
 
