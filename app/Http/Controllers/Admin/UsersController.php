@@ -34,6 +34,17 @@ class UsersController extends Controller
       return view('admin.users.create');
     }
 
+    public function edit($id){
+      $user = $this->userRepository->find($id);
+      return view('admin.users.edit', compact('user'));
+    }
+
+    public function update(UserRequest $request, $id){
+      $this->userService->update($request, $id);
+      flash('Usuario editado com sucesso.')->success()->important();
+      return back();
+    }
+
     public function store(UserRequest $request){
         $return = $this->userService->create($request);
         flash('Usuario cadastrado com sucesso.')->success()->important();

@@ -14,15 +14,17 @@
         <td>{!! $user->email !!}</td>
         <td>{!! $user->present()->type !!}</td>
         <td>
-          <a class="btn btn-info btn-xs btn-icon" href="{{ route('admin.User.show',[$user->id]) }}">
-            <i class="fa fa-eye"></i>
-          </a>
-          <a class="btn btn-default btn-xs btn-icon">
-            <i class="fa fa-pencil-square-o"></i>
-          </a>
-          <a class="btn btn-danger btn-xs btn-icon">
-            <i class="fa fa-times"></i>
-          </a>
+          {{Form::open(['route' => ['admin.User.destroy', $user->id],'method' =>'delete'] )}}
+          <div class="btn-group">
+            <a class="btn btn-info btn-xs btn-icon" href="{{ route('admin.User.show',[$user->id]) }}">
+              <i class="fa fa-eye"></i>
+            </a>
+            <a class="btn btn-default btn-xs btn-icon" href="{{ route('admin.User.edit',[$user->id])}}">
+              <i class="fa fa-pencil-square-o"></i>
+            </a>
+            {{Form::button('<i class="fa fa-times"></i>',['type' => 'submit' , 'class' => 'btn btn-danger btn-icon btn-xs'])}}
+          </div>
+          {{Form::close()}}
         </td>
       </tr>
     @endforeach
