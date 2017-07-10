@@ -13,11 +13,28 @@ Html::macro('menuItem', function ($name, $url, $urlActive, $icon) {
     return $element;
 });
 
+Form::macro('selectField', function ($name, $label = NULL, $options = [], $value = NULL, $attributes = []) {
+    $element = Form::select($name, $options, $value ? $value : old($name), field_attributes($name, $attributes));
+
+    return field_wrapper($name, $label, $element);
+});
+
 Form::macro('dateField', function ($name, $label = NULL, $value = NULL, $attributes = []) {
     $element = '<div class="input-group date">';
     $element .= Form::dateTime($name, $value ? $value : old($name), field_attributes($name, $attributes));
     $element .= '<span class="input-group-addon">';
     $element .= '<i class="fa fa-calendar"></i>';
+    $element .= '</span>';
+    $element .= '</div>';
+
+    return field_wrapper($name, $label, $element);
+});
+
+Form::macro('timeField', function ($name, $label = NULL, $value = NULL, $attributes = []) {
+    $element = '<div class="input-group date">';
+    $element .= Form::text($name, $value ? $value : old($name), field_attributes($name, $attributes));
+    $element .= '<span class="input-group-addon">';
+    $element .= '<i class="fa fa-clock-o"></i>';
     $element .= '</span>';
     $element .= '</div>';
 

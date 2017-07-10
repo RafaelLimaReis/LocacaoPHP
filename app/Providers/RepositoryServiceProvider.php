@@ -10,6 +10,9 @@ use App\Repositories\Interfaces\UserRepository;
 use App\Repositories\AreaRepositoryEloquent;
 use App\Repositories\Interfaces\AreaRepository;
 
+use App\Repositories\ReserveRepositoryEloquent;
+use App\Repositories\Interfaces\ReserveRepository;
+
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -36,6 +39,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             AreaRepository::class,
             AreaRepositoryEloquent::class
+        );
+        $this->app->bind(
+            ReserveRepository::class,
+            ReserveRepositoryEloquent::class
         );
     }
 }
