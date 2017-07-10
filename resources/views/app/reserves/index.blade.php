@@ -8,15 +8,9 @@
         <div class="panel panel-success">
           <div class="panel-body">
             <div class="row" style="padding-left: 20px">
-              <!-- Startdate Field -->
-  <div class="col-sm-4">
-      {!! Form::dateField(
-          'startDate',
-          'Data início:',
-          null,
-          ['data-input' => 'datepicker'])
-      !!}
-  </div>
+            {{Form::open(['route' => 'app.reserves.store'])}}
+            @include('app.reserves.fields')
+            {{Form::close()}}
             </div>
           </div>
         </div>

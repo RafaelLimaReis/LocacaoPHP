@@ -21,7 +21,8 @@ function MakeDatePickerOnEach() {
   new Flatpicker('[data-input=timepicker]', {
     dateFormat: 'H:i',
     enableTime: true,
-    noCalendar: true
+    noCalendar: true,
+    time_24hr: true,
   });
 }
 
