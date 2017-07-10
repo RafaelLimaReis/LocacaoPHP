@@ -24,7 +24,7 @@ const autoprefix = new LessPluginAutoPrefix({
   browsers: ['last 2 versions']
 });
 
-const lessPatch = 'resources/assets/less';
+const lessPath = 'resources/assets/less';
 const cssDest = 'public/css';
 
 const jsPath = 'resources/assets/js/src';
@@ -74,9 +74,9 @@ gulp.task('css', function(){
    let src = '';
 
    if(argv.app){
-      src = lessPatch + '/app/app.less'
+      src = lessPath + '/app/app.less'
    }else if(argv.admin){
-      src = lessPatch + '/admin/admin.less'
+      src = lessPath + '/admin/admin.less'
    }else{
         console.log('LESS não encontrado.');
         return;
@@ -106,6 +106,12 @@ gulp.task('libs', function(){
     .pipe(uglify())
     .pipe(gulp.dest(jsDest))
     .pipe(notify('Libs finalizado!'));
+});
+
+gulp.task('watch', ['browserify', 'css', 'libs'], function() {
+  gulp.watch(jsPath + '/**/*.js', ['browserify']);
+  gulp.watch(lessPath + '/**/*.less', ['css']);
+  gulp.watch(jsPath + '/libs.js', ['libs']);
 });
 
 gulp.task('copy', function() {
