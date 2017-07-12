@@ -7,11 +7,9 @@
       <div id="page-content">
         <div class="panel panel-success">
           <div class="panel-body">
-            <div class="row" style="padding-left: 20px">
             {{Form::open(['route' => 'app.reserves.store'])}}
             @include('app.reserves.fields')
             {{Form::close()}}
-            </div>
           </div>
         </div>
       </div>

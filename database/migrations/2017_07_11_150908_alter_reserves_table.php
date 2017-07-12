@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateInvitedsTable extends Migration
+class AlterReservesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,8 @@ class CreateInvitedsTable extends Migration
      */
     public function up()
     {
-        Schema::create('inviteds', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        Schema::table('reserves', function (Blueprint $table) {
+            $table->date('date_reserve');
         });
     }
 
@@ -25,6 +24,8 @@ class CreateInvitedsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('inviteds');
+        Schema::table('reserves', function (Blueprint $table) {
+            $table->dropColumn('date_reserve');
+        });
     }
 }

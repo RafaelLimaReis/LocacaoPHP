@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Prettus\Repository\Contracts\Transformable;
+use Prettus\Repository\Traits\TransformableTrait;
 
-class Schedule extends Model
+class Schedule extends Model implements Transformable
 {
-    const HOURS  = [
-        '1' => '7:00',
-        '2' => '7:30'
-    ];
+    use TransformableTrait;
+
+    protected $fillable = [];
+
 }
