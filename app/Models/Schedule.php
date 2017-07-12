@@ -12,4 +12,8 @@ class Schedule extends Model implements Transformable
 
     protected $fillable = [];
 
+    public function schedulesArea(){
+        return $this->belongsToMany(Area::class,'reserve','id','id_area');
+    }
+
 }

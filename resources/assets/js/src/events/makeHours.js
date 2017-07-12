@@ -7,9 +7,9 @@ exports.init = function(){
     const URL = laroute.route('app.reserves.find',{date:_date});
 
     $.get(URL,function(data){
-
+      console.log(data);
       $.each(data, function(index,hoursObj){
-
+        console.log(hoursObj);
         $('#startHours').append('<option value="' + index + '">'+ hoursObj + '</option>');
         $('#endHours').append('<option value="' + index + '">'+ hoursObj + '</option>');
       });

@@ -24,7 +24,7 @@ class ScheduleRepositoryEloquent extends BaseRepository implements ScheduleRepos
         return Schedule::class;
     }
 
-    
+
 
     /**
      * Boot up the repository, pushing criteria
