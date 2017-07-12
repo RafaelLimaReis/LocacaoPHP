@@ -28,9 +28,4 @@ class User extends Authenticatable
     public function area(){
       return $this->hasMany(Area::class,'id_responsible','id');
     }
-
-    public function schedules(){
-      return $this->belongsToMany(Schedule::class,'reserves','id','id_user');
-    }
-
 }
