@@ -6,6 +6,9 @@
       </section>
       <div id="page-content">
         <div class="panel panel-success">
+          <div class="panel-head">
+            @include('flash::message')
+          </div>
           <div class="panel-body">
             {{Form::open(['route' => 'app.reserves.store'])}}
             @include('app.reserves.fields')

@@ -28,4 +28,19 @@ class User extends Authenticatable
     public function area(){
       return $this->hasMany(Area::class,'id_responsible','id');
     }
+
+    public function reservesArea(){
+        return $this->belongsToMany(Area::class,'reserves','id_user','id_area')
+                ->withPivot('id_inicio','id_fim','date_reserve')
+                ->withTimestamps();
+    }
+
+    public function reservesStart(){
+        return $this->belongsToMany(Schedule::class,'reserves','id_user','id_inicio');
+    }
+
+    public function reservesEnd(){
+        return $this->belongsToMany(Schedule::class,'reserves','id_user','id_fim');
+    }
+
 }

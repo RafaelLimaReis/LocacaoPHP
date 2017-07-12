@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\App;
 
+use Flash;
 use Illuminate\Http\Request;
 use App\Services\ReserveService;
 use App\Repositories\Interfaces\AreaRepository;
@@ -24,6 +25,8 @@ class ReservesController extends Controller
 
     public function store(Request $request){
         $this->reserveService->create($request);
+        flash('Reserva realizada com sucesso.')->success()->important();
+        return back();
     }
 
     public function search(Request $request)

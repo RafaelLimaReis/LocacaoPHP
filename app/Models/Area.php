@@ -23,4 +23,8 @@ class Area extends Model
     public function responsible(){
       return $this->belongsTo(User::class,'id_responsible','id');
     }
+
+    public function reservedUser(){
+        return $this->belongsToMany(User::class,'reserves','id_area','id_user');
+    }
 }

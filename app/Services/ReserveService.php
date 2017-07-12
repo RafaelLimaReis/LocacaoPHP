@@ -27,11 +27,14 @@ class ReserveService {
 
     public function create($request){
         $inputs = $request->except('_token');
+        $inputs['id_user'] = Auth::id();
+        $inputs['date_reserve'] = Carbon::createFromFormat('d/m/Y', $request->date_reserve);
+        $inputs['created_at'] = $inputs['updated_at'] = Carbon::now();
         $user = $this->userRepository->find(Auth::id());
-        $user->areas()->attach(Auth::id(),$inputs);
+        $user->reservesArea()->attach(Auth::id(),$inputs);
     }
 
     public function findSchedules(){
-        return $this->scheduleRepository->all()->pluck('hour', 'id')->toArray();
+        return $this->scheduleRepository->all()->pluck('hour','id')->toArray();
     }
 }
