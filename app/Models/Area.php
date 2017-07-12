@@ -23,5 +23,4 @@ class Area extends Model
     public function responsible(){
       return $this->belongsTo(User::class,'id_responsible','id');
     }
-
 }

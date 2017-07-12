@@ -1,32 +1,35 @@
 <?php
 namespace App\Http\Controllers\App;
 
-use App\Models\Schedule;
 use Illuminate\Http\Request;
 use App\Services\ReserveService;
+use App\Repositories\Interfaces\AreaRepository;
 use App\Http\Controllers\Controller;
 
 class ReservesController extends Controller
 {
     private $reserveService;
+    private $areaRepository;
 
-    public function __construct(ReserveService $reserveService){
+    public function __construct(ReserveService $reserveService, AreaRepository $areaRepository){
         $this->reserveService = $reserveService;
+        $this->areaRepository = $areaRepository;
     }
 
     public function index(){
-        return view('app.reserves.index');
+        $areas = $this->areaRepository->all()->pluck('name','id')->toArray();
+        return view('app.reserves.index', compact('areas'));
+
     }
 
     public function store(Request $request){
-        $inputs = $request->except('_token');
-        $this->reserveService->create($inputs);
+        $this->reserveService->create($request);
     }
 
     public function search(Request $request)
     {
         if($request->ajax()){
-            return Schedule::HOURS;
+            return $this->reserveService->findSchedules();
         }
     }
 }
