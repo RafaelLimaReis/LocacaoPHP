@@ -10,8 +10,8 @@ exports.init = function(){
       console.log(data);
       $.each(data, function(index,hoursObj){
         console.log(hoursObj);
-        $('#startHours').append('<option value="' + index + '">'+ hoursObj + '</option>');
-        $('#endHours').append('<option value="' + index + '">'+ hoursObj + '</option>');
+        $('#startHours').append('<option value="' + hoursObj + '">'+ hoursObj + '</option>');
+        $('#endHours').append('<option value="' + hoursObj + '">'+ hoursObj + '</option>');
       });
       $('.hours').show();
     })

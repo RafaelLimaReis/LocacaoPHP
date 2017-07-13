@@ -38,4 +38,5 @@
 </div>
 <div class="row">
   <button class="btn btn-success btn-labeled fa fa-floppy-o" type="submit">Reservar</button>
+  <a href="{{route('app.reserves.index')}}" class="btn btn-default btn-labeled fa fa-undo">Voltar</a>
 </div>
