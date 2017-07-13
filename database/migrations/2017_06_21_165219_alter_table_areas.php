@@ -13,7 +13,7 @@ class AlterTableAreas extends Migration
     public function up()
     {
         Schema::table('areas', function (Blueprint $table) {
-            $table->integer('id_responsible')->unsigned();
+            $table->integer('id_responsible')->unsigned()->after('id');
             $table->foreign('id_responsible')->references('id')->on('users');
         });
     }
@@ -27,6 +27,7 @@ class AlterTableAreas extends Migration
     {
         Schema::table('areas', function (Blueprint $table) {
             $table->dropForeign(['id_responsible']);
+            $table->dropColumn('id_responsible');
         });
     }
 }
