@@ -9,12 +9,12 @@
     </thead>
     <tbody>
         @foreach($reserves as $reserve)
-            @if($reserve->date_reserve < date("Y-m-d"))
+            @if($reserve->pivot->date < date("Y-m-d"))
                 <tr>
-                    <td>{{$reserve->date_reserve}}</td>
+                    <td>{{$reserve->present()->reserve}}</td>
                     <td>{{$reserve->name}}</td>
-                    <td>{{$reserve->reservesArea->pivot->id_inicio}}</td>
-                    <td>{{$reserve->id_fim}}</td>
+                    <td>{{$reserve->pivot->hour_start}}</td>
+                    <td>{{$reserve->pivot->hour_end}}</td>
                 </tr>
             @endif
         @endforeach

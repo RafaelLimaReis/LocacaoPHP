@@ -8,6 +8,7 @@
   <div id="page-content">
     <div class="panel panel-default">
       <div class="panel-body">
+        @include('app.reserves.table_old')
       </div>
     </div>
   </div>
@@ -18,6 +19,7 @@
   <div id="page-content">
     <div class="panel panel-default">
       <div class="panel-body">
+        @include('app.reserves.table_future')
       </div>
     </div>
   </div>

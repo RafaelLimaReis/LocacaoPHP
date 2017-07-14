@@ -7,15 +7,18 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Repositories\Interfaces\AreaRepository;
 
-class AreaService {
+class AreaService
+{
 
     private $areaRepository;
 
-    public function __construct(AreaRepository $areaRepository){
+    public function __construct(AreaRepository $areaRepository)
+    {
         $this->areaRepository = $areaRepository;
     }
 
-    public function create($request){
+    public function create($request)
+    {
         $area = $request->all();
         $area['created_at'] = $area['updated_at'] = Carbon::now();
 
@@ -23,10 +26,11 @@ class AreaService {
         return $area;
     }
 
-    public function update($request, $id){
-        $area = $request->except('_method','_token');
+    public function update($request, $id)
+    {
+        $area = $request->except('_method', '_token');
         $area['updated_at'] = Carbon::now();
 
-        $this->areaRepository->update($area,$id);
+        $this->areaRepository->update($area, $id);
     }
 }

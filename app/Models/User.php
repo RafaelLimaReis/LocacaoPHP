@@ -17,15 +17,20 @@ class User extends Authenticatable
 
     protected $dates = ['created_at', 'updated_at', 'deleted_at'];
 
-   protected $hidden = [
-        'created_at', 'updated_at', 'deleted_at'
-    ];
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
     protected $fillable = [
         'name', 'email' , 'username', 'phone', 'password', 'type'
     ];
 
-    public function area(){
-      return $this->hasMany(Area::class,'id_responsible','id');
+    public function responsibleArea()
+    {
+        return $this->hasMany(Area::class, 'id_responsible', 'id');
+    }
+
+    public function reserveArea()
+    {
+        return $this->belongsToMany(Area::class, 'reserves', 'id_user', 'id_area')
+                    ->withPivot('date', 'hour_start', 'hour_end');
     }
 }
