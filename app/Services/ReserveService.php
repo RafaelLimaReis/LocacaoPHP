@@ -2,53 +2,54 @@
 
 namespace App\Services;
 
+use DB;
 use Carbon\Carbon;
-use App\Models\Reserve;
+use App\Models\Area;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use App\Repositories\Interfaces\ReserveRepository;
 use App\Repositories\Interfaces\UserRepository;
 use Illuminate\Support\Facades\Auth;
 
-class ReserveService {
+class ReserveService
+{
 
     private $reserveRepository;
     private $userRepository;
 
 
-    public function __construct(UserRepository $userRepository, ReserveRepository $reserveRepository){
-        $this->reserveRepository = $reserveRepository;
+    public function __construct(UserRepository $userRepository)
+    {
         $this->userRepository = $userRepository;
     }
 
-    public function create($request){
+    public function create($request)
+    {
         $inputs = $request->except('_token');
         $inputs['id_user'] = Auth::id();
-        $inputs['date_reserve'] = Carbon::createFromFormat('d/m/Y', $request->date_reserve);
+        $inputs['date'] = Carbon::createFromFormat('d/m/Y', $request->date);
         $inputs['created_at'] = $inputs['updated_at'] = Carbon::now();
         $user = $this->userRepository->find(Auth::id());
-        $user->reservesArea()->attach(Auth::id(),$inputs);
+        $user->reserveArea()->attach(Auth::id(), $inputs);
     }
 
-    public function findSchedules(Request $request){
-        $schedules = Reserve::Schedules;
-        $max = sizeof($schedules);
-        $reserves = $this->reserveRepository->all();
-        $reserve = $request->except('_token');
-        for($i=0; $i < $reserves->count(); $i++){
-            $date = explode('-',$reserves[$i]->date_reserve);
+    public function findSchedule(Request $request)
+    {
+        $schedules = Area::SCHEDULES;
+        $reserves = DB::table('reserves')->get();
+        $reserve = $request->all();
+        for ($i=0; $i < sizeof($reserves); $i++) {
+            $date = explode('-', $reserves[$i]->date);
             $date = $date[2].'/'.$date[1].'/'.$date[0];
-            if($reserve['id_area'] == $reserves[$i]->id_area){
-                if($date == $reserve['date_reserve']){
-                    for($k=1; $k <= $max; $k++){
-                        if((($schedules[$k] == $reserves[$i]->id_inicio)||($schedules[$k] == $reserves[$i]->id_fim))||(($schedules[$k] > $reserves[$i]->id_inicio) && ($schedules[$k] < $reserves[$i]->id_fim))){
-                            unset($schedules[$k]);
+            if (($reserves[$i]->id_area) == ($reserve['id_area'])) {
+                if ($date == $reserve['date']) {
+                    for ($k=0; $k < sizeof($schedules); $k++) {
+                        if ((($schedules[$k]['hour'] == $reserves[$i]->hour_start)||($schedules[$k]['hour'] == $reserves[$i]->hour_end))||(($schedules[$k]['hour'] > $reserves[$i]->hour_start) && ($schedules[$k]['hour'] < $reserves[$i]->hour_end))) {
+                            $schedules[$k]['color'] = 'red';
                         };
                     };
                 };
             };
         };
-        //$schedules = array_values($schedules);
         return $schedules;
     }
 }

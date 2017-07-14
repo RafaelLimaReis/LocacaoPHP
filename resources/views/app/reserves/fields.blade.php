@@ -2,7 +2,8 @@
       <div class="col-sm-6">
           {!! Form::selectField(
               'id_area','Area:',$areas,null,
-              ['placeholder' => 'Selecione a area'])
+              ['placeholder' => 'Selecione a area',
+              'id'=>'reserve_area'])
           !!}
       </div>
 </div>
@@ -10,7 +11,7 @@
   <!-- date Field -->
   <div class="col-sm-4">
       {!! Form::dateField(
-        'date_reserve',
+        'date',
         'Data início:',
         null,
         ['data-input' => 'datepicker',
@@ -22,14 +23,14 @@
 
       <div class="col-sm-3">
           {!! Form::selectField(
-              'id_inicio','Inicio:',[],null,
+              'hour_start','Inicio:',[],null,
               ['placeholder' => 'Selecione a hora inicial',
               'id' => 'startHours'])
           !!}
       </div>
       <div class="col-sm-3">
           {!! Form::selectField(
-              'id_fim','Fim:',[],null,
+              'hour_end','Fim:',[],null,
               ['placeholder' => 'Selecione a hora final',
               'id' => 'endHours'])
           !!}

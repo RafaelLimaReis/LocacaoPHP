@@ -20,9 +20,32 @@ class Area extends Model
 
     protected $fillable = ['name','description','number','id_responsible'];
 
-    public function responsible(){
-      return $this->belongsTo(User::class,'id_responsible','id');
+    const SCHEDULES = [
+       ['hour' => '07:00:00', 'color' => 'black'],
+       ['hour' => '07:30:00', 'color' => 'black'],
+       ['hour' => '08:00:00', 'color' => 'black'],
+       ['hour' => '08:30:00', 'color' => 'black'],
+       ['hour' => '09:00:00', 'color' => 'black'],
+       ['hour' => '09:30:00', 'color' => 'black'],
+       ['hour' => '10:00:00', 'color' => 'black'],
+       ['hour' => '10:30:00', 'color' => 'black'],
+       ['hour' => '11:00:00', 'color' => 'black'],
+       ['hour' => '11:30:00', 'color' => 'black'],
+       ['hour' => '12:00:00', 'color' => 'black'],
+       ['hour' => '12:30:00', 'color' => 'black'],
+       ['hour' => '13:00:00', 'color' => 'black'],
+       ['hour' => '13:30:00', 'color' => 'black'],
+       ['hour' => '14:00:00', 'color' => 'black'],
+       ['hour' => '14:30:00', 'color' => 'black'],
+        ];
+
+    public function responsibleUser()
+    {
+        return $this->belongsTo(User::class, 'id_responsible', 'id');
     }
 
-
+    public function reserveUser()
+    {
+        return $this->belongsToMany(User::class, 'reserves', 'id_area', 'id_user');
+    }
 }

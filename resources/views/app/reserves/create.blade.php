@@ -10,7 +10,7 @@
         @include('flash::message')
       </div>
       <div class="panel-body">
-        {{Form::open()}}
+        {{Form::open(['route' => 'app.reserves.store'])}}
         @include('app.reserves.fields')
         {{Form::close()}}
       </div>

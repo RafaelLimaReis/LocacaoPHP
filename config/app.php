@@ -162,7 +162,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\MacroServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        App\Providers\RepositoryServiceProvider::class,
+        App\Providers\RepositoryServiceProvider::class
 
     ],
 
