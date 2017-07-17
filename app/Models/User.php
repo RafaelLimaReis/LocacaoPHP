@@ -31,9 +31,7 @@ class User extends Authenticatable
 
         static::created(function ($user) {
             LogsUser::create([
-              'id_user' => Auth::id(),
-              'id_affected_user' => $user->id,
-              'description_info' => $user->name . '/' . $user->name . '/' . $user->email . '/' . $user->username . '/' . $user->phone,
+              'description_info' => json_encode([['user' => ['id' => Auth::id(), 'username' => Auth::user()->username]],['info' => ['id' => $user->id, 'name' => $user->name]]]),
               'action' => 'CREATE'
             ]);
         });
