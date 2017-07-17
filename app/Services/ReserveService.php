@@ -22,6 +22,11 @@ class ReserveService
         $this->userRepository = $userRepository;
     }
 
+    public function allReserves()
+    {
+        return $reserves = DB::table('reserves')->get();
+    }
+
     public function create($request)
     {
         $inputs = $request->except('_token');
