@@ -43,6 +43,13 @@ class ReservesController extends Controller
         return back();
     }
 
+    public function show($id)
+    {
+        $reserve = $this->reserveService->findReserve($id);
+        $inviteds = $this->reserveService->findInviteds($reserve->id);
+        return view('app.reserves.edit', compact('reserve', 'inviteds'));
+    }
+
     public function findSchedules(Request $request)
     {
         $schedules = $this->reserveService->findSchedule($request);

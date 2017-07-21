@@ -5,7 +5,10 @@ Route::post('login', ['as' => 'postLogin', 'uses' => 'AuthController@postLogin']
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', ['as' => 'home', 'uses' => 'HomeController@index']);
+    Route::get('filtro', ['as' => 'filtrar', 'uses' => 'ReservesController@findSchedules']);
+    Route::get('findInvited', ['as' => 'findInvited', 'uses' => 'InvitedsController@findInvited']);
+    Route::post('send', ['as' => 'sendInvited', 'uses' => 'InvitedsController@sendInvited']);
 
-    Route::resource('reserves', 'ReservesController', ['only'=>['index','store','create']]);
-    Route::get('reserves/filtro', ['as' => 'reserves.find', 'uses' => 'ReservesController@findSchedules']);
+    Route::resource('inviteds', 'InvitedsController');
+    Route::resource('reserves', 'ReservesController');
 });
