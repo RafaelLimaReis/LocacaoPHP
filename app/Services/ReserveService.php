@@ -53,6 +53,14 @@ class ReserveService
         return $schedules;
     }
 
+    public function findReservesUser($id)
+    {
+        return DB::table('reserves as r')
+                ->select('r.id', 'r.date', 'r.hour_start', 'r.hour_end', 'a.name')
+                ->join('areas as a', 'r.id_area', '=', 'a.id')
+                ->orderBy('date')->get();
+    }
+
     public function findReserve($id)
     {
         return DB::table('reserves')
