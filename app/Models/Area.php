@@ -37,7 +37,7 @@ class Area extends Model
        ['hour' => '13:30:00', 'color' => 'black'],
        ['hour' => '14:00:00', 'color' => 'black'],
        ['hour' => '14:30:00', 'color' => 'black'],
-        ];
+    ];
 
     public function responsibleUser()
     {

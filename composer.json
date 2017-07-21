@@ -15,7 +15,9 @@
         "infyomlabs/laravel-generator": "5.4.x-dev",
         "infyomlabs/adminlte-templates": "5.4.x-dev",
         "nesbot/carbon": "^1.22",
+        "doctrine/dbal": "^2.5",
         "nexmo/laravel": "^0.4.0"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
