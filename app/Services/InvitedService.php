@@ -46,4 +46,12 @@ class InvitedService
             DB::table('inviteds_has_reserve')->insert(['id_invited' => $inputs['id_invited'], 'id_reserve' => $inputs['id_reserve'], 'created_at' => $inputs['created_at'], 'updated_at' => $inputs['updated_at']]);
         }
     }
+
+    public function findInviteds($id)
+    {
+        $inviteds = DB::table('inviteds_has_reserve')
+                        ->join('inviteds', 'inviteds.id', '=', 'inviteds_has_reserve.id_invited')
+                        ->where('id_reserve', '=', $id)->get();
+        return $inviteds;
+    }
 }
