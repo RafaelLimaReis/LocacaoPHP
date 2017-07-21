@@ -31,6 +31,6 @@ class User extends Authenticatable
     public function reserveArea()
     {
         return $this->belongsToMany(Area::class, 'reserves', 'id_user', 'id_area')
-                    ->withPivot('date', 'hour_start', 'hour_end');
+                    ->withPivot('id', 'date', 'hour_start', 'hour_end');
     }
 }

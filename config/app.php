@@ -162,7 +162,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\MacroServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        App\Providers\RepositoryServiceProvider::class
+        App\Providers\RepositoryServiceProvider::class,
+        Nexmo\Laravel\NexmoServiceProvider::class
 
     ],
 
@@ -211,6 +212,7 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
           'Form' => Collective\Html\FormFacade::class,
           'Html' => Collective\Html\HtmlFacade::class,
+          'Nexmo' => \Nexmo\Laravel\Facade\Nexmo::class
 
     ],
 

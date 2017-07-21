@@ -16,6 +16,9 @@ use App\Repositories\Interfaces\ReserveRepository;
 use App\Repositories\ScheduleRepositoryEloquent;
 use App\Repositories\Interfaces\ScheduleRepository;
 
+use App\Repositories\InvitedRepositoryEloquent;
+use App\Repositories\Interfaces\InvitedRepository;
+
 class RepositoryServiceProvider extends ServiceProvider
 {
     /**
@@ -50,6 +53,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             ScheduleRepository::class,
             ScheduleRepositoryEloquent::class
+        );
+        $this->app->bind(
+            InvitedRepository::class,
+            InvitedRepositoryEloquent::class
         );
     }
 }
