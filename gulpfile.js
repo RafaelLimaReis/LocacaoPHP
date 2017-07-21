@@ -99,6 +99,7 @@ gulp.task('libs', function(){
       'node_modules/jquery/dist/jquery.js',
       'resources/assets/js/nifty.min.js',
       'node_modules/bootstrap/dist/js/bootstrap.js',
+      'node_modules/selectize/dist/js/standalone/selectize.js'
     ])
     .pipe(concat('libs.js'))
     .pipe(gulp.dest(jsDest))

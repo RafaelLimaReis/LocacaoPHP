@@ -3,7 +3,6 @@
 namespace App\Services;
 
 use DB;
-use Nexmo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -46,10 +45,5 @@ class InvitedService
             $inputs['id_invited'] = $inviteds[$i];
             DB::table('inviteds_has_reserve')->insert(['id_invited' => $inputs['id_invited'], 'id_reserve' => $inputs['id_reserve'], 'created_at' => $inputs['created_at'], 'updated_at' => $inputs['updated_at']]);
         }
-        Nexmo::message()->send([
-            'to' => '16992807153',
-            'from' => '16992807153',
-            'text' => 'Teste mensagem.'
-        ]);
     }
 }
