@@ -6816,7 +6816,7 @@ return hooks;
 
             absolute: false,
             rootUrl: '',
-            routes: [{ "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "login", "name": "admin.getLogin", "action": "App\Http\Controllers\Admin\AuthController@login" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "logout", "name": "admin.logout", "action": "App\Http\Controllers\Admin\AuthController@logout" }, { "host": "admin.localhost", "methods": ["POST"], "uri": "login", "name": "admin.postLogin", "action": "App\Http\Controllers\Admin\AuthController@postLogin" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "home", "name": "admin.home", "action": "App\Http\Controllers\Admin\HomeController@index" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "User", "name": "admin.User.index", "action": "App\Http\Controllers\Admin\UsersController@index" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "User\/create", "name": "admin.User.create", "action": "App\Http\Controllers\Admin\UsersController@create" }, { "host": "admin.localhost", "methods": ["POST"], "uri": "User", "name": "admin.User.store", "action": "App\Http\Controllers\Admin\UsersController@store" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "User\/{User}", "name": "admin.User.show", "action": "App\Http\Controllers\Admin\UsersController@show" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "User\/{User}\/edit", "name": "admin.User.edit", "action": "App\Http\Controllers\Admin\UsersController@edit" }, { "host": "admin.localhost", "methods": ["PUT", "PATCH"], "uri": "User\/{User}", "name": "admin.User.update", "action": "App\Http\Controllers\Admin\UsersController@update" }, { "host": "admin.localhost", "methods": ["DELETE"], "uri": "User\/{User}", "name": "admin.User.destroy", "action": "App\Http\Controllers\Admin\UsersController@destroy" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "Area", "name": "admin.Area.index", "action": "App\Http\Controllers\Admin\AreasController@index" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "Area\/create", "name": "admin.Area.create", "action": "App\Http\Controllers\Admin\AreasController@create" }, { "host": "admin.localhost", "methods": ["POST"], "uri": "Area", "name": "admin.Area.store", "action": "App\Http\Controllers\Admin\AreasController@store" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "Area\/{Area}", "name": "admin.Area.show", "action": "App\Http\Controllers\Admin\AreasController@show" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "Area\/{Area}\/edit", "name": "admin.Area.edit", "action": "App\Http\Controllers\Admin\AreasController@edit" }, { "host": "admin.localhost", "methods": ["PUT", "PATCH"], "uri": "Area\/{Area}", "name": "admin.Area.update", "action": "App\Http\Controllers\Admin\AreasController@update" }, { "host": "admin.localhost", "methods": ["DELETE"], "uri": "Area\/{Area}", "name": "admin.Area.destroy", "action": "App\Http\Controllers\Admin\AreasController@destroy" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "login", "name": "app.getLogin", "action": "App\Http\Controllers\App\AuthController@login" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "logout", "name": "app.logout", "action": "App\Http\Controllers\App\AuthController@logout" }, { "host": "app.localhost", "methods": ["POST"], "uri": "login", "name": "app.postLogin", "action": "App\Http\Controllers\App\AuthController@postLogin" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "home", "name": "app.home", "action": "App\Http\Controllers\App\HomeController@index" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "reserves", "name": "app.reserves.index", "action": "App\Http\Controllers\App\ReservesController@index" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "reserves\/create", "name": "app.reserves.create", "action": "App\Http\Controllers\App\ReservesController@create" }, { "host": "app.localhost", "methods": ["POST"], "uri": "reserves", "name": "app.reserves.store", "action": "App\Http\Controllers\App\ReservesController@store" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "reserves\/{reserves}", "name": "app.reserves.show", "action": "App\Http\Controllers\App\ReservesController@show" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "reserves\/{reserves}\/edit", "name": "app.reserves.edit", "action": "App\Http\Controllers\App\ReservesController@edit" }, { "host": "app.localhost", "methods": ["PUT", "PATCH"], "uri": "reserves\/{reserves}", "name": "app.reserves.update", "action": "App\Http\Controllers\App\ReservesController@update" }, { "host": "app.localhost", "methods": ["DELETE"], "uri": "reserves\/{reserves}", "name": "app.reserves.destroy", "action": "App\Http\Controllers\App\ReservesController@destroy" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "reserves\/filtro", "name": "app.reserves.find", "action": "App\Http\Controllers\App\ReservesController@search" }, { "host": "localhost", "methods": ["GET", "HEAD"], "uri": "\/", "name": "site.", "action": "Closure" }],
+            routes: [{ "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "login", "name": "admin.getLogin", "action": "App\Http\Controllers\Admin\AuthController@login" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "logout", "name": "admin.logout", "action": "App\Http\Controllers\Admin\AuthController@logout" }, { "host": "admin.localhost", "methods": ["POST"], "uri": "login", "name": "admin.postLogin", "action": "App\Http\Controllers\Admin\AuthController@postLogin" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "home", "name": "admin.home", "action": "App\Http\Controllers\Admin\HomeController@index" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "User", "name": "admin.User.index", "action": "App\Http\Controllers\Admin\UsersController@index" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "User\/create", "name": "admin.User.create", "action": "App\Http\Controllers\Admin\UsersController@create" }, { "host": "admin.localhost", "methods": ["POST"], "uri": "User", "name": "admin.User.store", "action": "App\Http\Controllers\Admin\UsersController@store" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "User\/{User}", "name": "admin.User.show", "action": "App\Http\Controllers\Admin\UsersController@show" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "User\/{User}\/edit", "name": "admin.User.edit", "action": "App\Http\Controllers\Admin\UsersController@edit" }, { "host": "admin.localhost", "methods": ["PUT", "PATCH"], "uri": "User\/{User}", "name": "admin.User.update", "action": "App\Http\Controllers\Admin\UsersController@update" }, { "host": "admin.localhost", "methods": ["DELETE"], "uri": "User\/{User}", "name": "admin.User.destroy", "action": "App\Http\Controllers\Admin\UsersController@destroy" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "Area", "name": "admin.Area.index", "action": "App\Http\Controllers\Admin\AreasController@index" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "Area\/create", "name": "admin.Area.create", "action": "App\Http\Controllers\Admin\AreasController@create" }, { "host": "admin.localhost", "methods": ["POST"], "uri": "Area", "name": "admin.Area.store", "action": "App\Http\Controllers\Admin\AreasController@store" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "Area\/{Area}", "name": "admin.Area.show", "action": "App\Http\Controllers\Admin\AreasController@show" }, { "host": "admin.localhost", "methods": ["GET", "HEAD"], "uri": "Area\/{Area}\/edit", "name": "admin.Area.edit", "action": "App\Http\Controllers\Admin\AreasController@edit" }, { "host": "admin.localhost", "methods": ["PUT", "PATCH"], "uri": "Area\/{Area}", "name": "admin.Area.update", "action": "App\Http\Controllers\Admin\AreasController@update" }, { "host": "admin.localhost", "methods": ["DELETE"], "uri": "Area\/{Area}", "name": "admin.Area.destroy", "action": "App\Http\Controllers\Admin\AreasController@destroy" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "login", "name": "app.getLogin", "action": "App\Http\Controllers\App\AuthController@login" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "logout", "name": "app.logout", "action": "App\Http\Controllers\App\AuthController@logout" }, { "host": "app.localhost", "methods": ["POST"], "uri": "login", "name": "app.postLogin", "action": "App\Http\Controllers\App\AuthController@postLogin" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "home", "name": "app.home", "action": "App\Http\Controllers\App\HomeController@index" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "filtro", "name": "app.filtrar", "action": "App\Http\Controllers\App\ReservesController@findSchedules" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "findInvited", "name": "app.findInvited", "action": "App\Http\Controllers\App\InvitedsController@findInvited" }, { "host": "app.localhost", "methods": ["POST"], "uri": "inviteds", "name": "app.inviteds.store", "action": "App\Http\Controllers\App\InvitedsController@store" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "reserves", "name": "app.reserves.index", "action": "App\Http\Controllers\App\ReservesController@index" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "reserves\/create", "name": "app.reserves.create", "action": "App\Http\Controllers\App\ReservesController@create" }, { "host": "app.localhost", "methods": ["POST"], "uri": "reserves", "name": "app.reserves.store", "action": "App\Http\Controllers\App\ReservesController@store" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "reserves\/{reserves}", "name": "app.reserves.show", "action": "App\Http\Controllers\App\ReservesController@show" }, { "host": "app.localhost", "methods": ["GET", "HEAD"], "uri": "reserves\/{reserves}\/edit", "name": "app.reserves.edit", "action": "App\Http\Controllers\App\ReservesController@edit" }, { "host": "app.localhost", "methods": ["PUT", "PATCH"], "uri": "reserves\/{reserves}", "name": "app.reserves.update", "action": "App\Http\Controllers\App\ReservesController@update" }, { "host": "app.localhost", "methods": ["DELETE"], "uri": "reserves\/{reserves}", "name": "app.reserves.destroy", "action": "App\Http\Controllers\App\ReservesController@destroy" }, { "host": "localhost", "methods": ["GET", "HEAD"], "uri": "\/", "name": "site.", "action": "Closure" }],
             prefix: '',
 
             route: function (name, parameters, route) {
@@ -7002,14 +7002,44 @@ return hooks;
 },{}],5:[function(require,module,exports){
 //events
 const makeHours = require('./events/makeHours');
+const findInvited = require('./events/findInvited');
 
 //functions
 const MakeDatePickerOnEach = require('./functions/MakeDatePickerOnEach'); //data e tempo
 
 MakeDatePickerOnEach();
 makeHours.init();
+findInvited.init();
 
-},{"./events/makeHours":6,"./functions/MakeDatePickerOnEach":7}],6:[function(require,module,exports){
+},{"./events/findInvited":6,"./events/makeHours":7,"./functions/MakeDatePickerOnEach":8}],6:[function(require,module,exports){
+const laroute = require('../../laroute.js');
+
+exports.init = function () {
+  const $name = $('[data-selectize = findName]');
+  const $cpf = $('[data-selectize = findCpf]');
+
+  if ($name.length) {
+    $name.selectize({
+      valueField: 'id',
+      labelField: 'name',
+      //maxItems: 1,
+      searchField: ['name'],
+      optgroupValueField: 'cpf',
+      //options: [],
+      create: false,
+      load: function (query, callback) {
+        if (query.length > 2) {
+          const url = laroute.route('app.findInvited', { query: query });
+          $.get(url, function (data) {
+            callback(data);
+          });
+        }
+      }
+    });
+  }
+};
+
+},{"../../laroute.js":4}],7:[function(require,module,exports){
 const laroute = require('../../laroute.js');
 
 exports.init = function () {
@@ -7017,7 +7047,7 @@ exports.init = function () {
   $('#dateFilter').change(function () {
     const _date = $('#dateFilter').val();
     const _area = $('#reserve_area').val();
-    const URL = laroute.route('app.reserves.find', { date: _date, id_area: _area });
+    const URL = laroute.route('app.filtrar', { date: _date, id_area: _area });
 
     $.get(URL, function (data) {
       console.log(data);
@@ -7039,7 +7069,7 @@ exports.init = function () {
   });
 };
 
-},{"../../laroute.js":4}],7:[function(require,module,exports){
+},{"../../laroute.js":4}],8:[function(require,module,exports){
 const Flatpicker = require('flatpickr');
 const moment = require('moment');
 

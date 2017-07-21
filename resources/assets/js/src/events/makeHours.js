@@ -5,7 +5,7 @@ exports.init = function(){
   $('#dateFilter').change(function(){
     const _date = $('#dateFilter').val();
     const _area = $('#reserve_area').val();
-    const URL = laroute.route('app.reserves.find',{date:_date,id_area:_area});
+    const URL = laroute.route('app.filtrar',{date:_date,id_area:_area});
 
     $.get(URL,function(data){
       console.log(data);
