@@ -15,7 +15,8 @@
         "infyomlabs/laravel-generator": "5.4.x-dev",
         "infyomlabs/adminlte-templates": "5.4.x-dev",
         "nesbot/carbon": "^1.22",
-        "barryvdh/laravel-cors": "^0.9.2"
+        "barryvdh/laravel-cors": "^0.9.2",
+        "nexmo/laravel": "^0.4.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
