@@ -163,7 +163,11 @@ return [
         App\Providers\MacroServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
+
+        Barryvdh\Cors\ServiceProvider::class,
+
         Nexmo\Laravel\NexmoServiceProvider::class
+
 
     ],
 
